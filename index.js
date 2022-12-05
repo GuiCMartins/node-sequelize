@@ -1,14 +1,11 @@
 const express = require('express');
+const routes = require('./routes');
 
 const app = express();
 
-app.use(express.json());
+routes(app);
 
 const PORT = 8080;
-
-app.get('/teste', (req, res) => {
-  res.status(200).send({ mensagem: 'Bem vindo' });
-});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na poorta: ${PORT}`);
